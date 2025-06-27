@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="YUVGp9PQwoGu4HMZEGPEphEMWyYHar4Z3xl3gApsq5c" />
-    <title>Prime Loop AI — You Focus on the Vision. We Handle the Rest.</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Loop AI - Custom AI Systems That Deliver</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Favicons for all devices -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
-    <link rel="manifest" href="assets/images/site.webmanifest" />
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-
-<style>
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Custom scrollbar */
         ::-webkit-scrollbar {
@@ -239,24 +226,15 @@
     </div>
 
     <nav class="p-4 transition-all duration-300 ease-in-out">
-  <div class="container mx-auto flex justify-between items-center">
-    <a href="#hero" class="text-3xl font-bold text-purple-400 hover:text-purple-300 transition-colors">
-      Prime Loop AI
-    </a>
-    <div>
-      <a href="#services" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-        Services
-      </a>
-      <a href="#impact" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-        Our Impact
-      </a>
-      <a href="#contact" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-        Contact Us
-      </a>
-    </div>
-  </div>
-</nav>
-
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-bold text-purple-400 hover:text-purple-300 transition-colors">Prime Loop AI</a>
+            <div>
+                <a href="#services" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                <a href="#impact" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Impact</a>
+                <a href="#contact" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
@@ -451,12 +429,12 @@
             for (let i = 0; i < numberOfStars; i++) {
                 let star = document.createElement('div');
                 star.className = 'star';
-                star.style.width = `${Math.random() * 3 + 0.5}px`;
+                star.style.width = ${Math.random() * 3 + 0.5}px;
                 star.style.height = star.style.width;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                star.style.animationDuration = `${Math.random() * 3 + 4}s`;
+                star.style.top = ${Math.random() * 100}%;
+                star.style.left = ${Math.random() * 100}%;
+                star.style.animationDelay = ${Math.random() * 5}s;
+                star.style.animationDuration = ${Math.random() * 3 + 4}s;
                 starsContainer.appendChild(star);
             }
         }
@@ -528,7 +506,7 @@
                 const rotateX = -((y - centerY) / centerY) * maxRotation; 
                 const translateX = ((x - centerX) / centerX) * maxTranslation * 0.25; 
                 const translateY = ((y - centerY) / centerY) * maxTranslation * 0.25; 
-                impactArea.style.transform = `translateY(0px) scale(1) translateX(${translateX}px) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                impactArea.style.transform = translateY(0px) scale(1) translateX(${translateX}px) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg);
             });
 
             impactArea.addEventListener('mouseleave', function() {
