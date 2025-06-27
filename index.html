@@ -1,67 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Verification -->
-    <meta name="google-site-verification" content="YUVGp9PQwoGu4HMZEGPEphEWMyYHar4Z3xl3gApsq5c">
-    <!-- Title & SEO -->
-    <title>Prime Loop AI – Automate. Scale. Dominate.</title>
-    <meta name="description" content="Custom AI systems that cut costs, save time, and keep you 10 steps ahead.">
-    <meta name="robots" content="index, follow">
+  <!-- FAVICON SETUP -->
+  <link rel="icon"           type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon"          href="assets/images/apple-touch-icon.png">
+  <link rel="manifest"                 href="assets/images/site.webmanifest">
+  <link rel="icon"           href="assets/images/favicon.ico"        type="image/x-icon">
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <meta name="theme-color" content="#0d021a">
+  <!-- SEO & VERIFICATION -->
+  <title>Prime Loop AI - Custom AI Systems That Deliver</title>
+  <meta name="description" content="We build AI solutions that make your business smarter, faster, and more profitable — from strategy to execution. Get Your Custom AI Plan.">
+  <meta name="robots"      content="index, follow">
+  <meta name="google-site-verification" content="YUVGp9PQwoGu4HMZEGPEphEWMyYHar4Z3xl3gApsq5c">
 
-    <!-- Tailwind & Fonts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- TAILWIND + FONTS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Custom scrollbar, body, stars... (same as before) */
-        ::-webkit-scrollbar { width:8px; }
-        ::-webkit-scrollbar-track { background:#1a072e; }
-        ::-webkit-scrollbar-thumb { background:#7e22ce; border-radius:4px; }
-        ::-webkit-scrollbar-thumb:hover { background:#9333ea; }
-        body { font-family:'Inter',sans-serif; background:#0d021a; color:#e0e0e0; overflow-x:hidden; }
-        .galaxy-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);overflow:hidden;}
-        .stars{position:absolute;top:0;left:0;width:100%;height:100%;transform:rotate(45deg);} .star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 5s infinite ease-in-out;}
-        @keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8);}50%{opacity:1;transform:scale(1.2);}}
-        .section-content{opacity:0;transform:translateY(60px) scale(.95);transition:opacity .7s cubic-bezier(.68,-.55,.27,1.55),transform .7s cubic-bezier(.68,-.55,.27,1.55);} .section-content.visible{opacity:1;transform:translateY(0) scale(1);}
-        h1,h2,h3,.impact-stat-value{font-family:'Orbitron',sans-serif;color:#c084fc;}h1{font-weight:900;}.impact-stat-value{color:#f0abfc;}
-        .glassmorphism{background:rgba(26,7,46,.4);backdrop-filter:blur(12px) saturate(180%);-webkit-backdrop-filter:blur(12px) saturate(180%);border:1px solid rgba(192,132,252,.25);border-radius:20px;box-shadow:0 10px 35px rgba(126,34,206,.25);}
-        .form-input{background:rgba(255,255,255,.05);border:1px solid rgba(192,132,252,.3);color:#e0e0e0;transition:border-color .3s,box-shadow .3s;} .form-input::placeholder{color:#a78bfa;opacity:.7;} .form-input:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247,.3);outline:none;}
-        .btn-primary{background:#d946ef;color:#110321;font-weight:700;transition:background .3s,transform .2s;} .btn-primary:hover{background:#f0abfc;transform:translateY(-2px) scale(1.02);}
-        nav{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:background .3s,box-shadow .3s;} nav.scrolled{background:rgba(13,2,26,.85);backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,.3);}
-        .impact-stat,.service-item{background:rgba(126,34,206,.15);border:1px solid rgba(192,132,252,.2);border-radius:12px;padding:1.5rem;text-align:center;transition:transform .3s,box-shadow .3s;user-select:none;cursor:default;} .impact-stat:hover,.service-item:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 8px 25px rgba(126,34,206,.3);} .body-text{font-size:1.125rem;line-height:1.75rem;color:#d8b4fe;} .body-text strong{color:#f0abfc;font-weight:600;} .sticky-cta{position:fixed;bottom:2rem;right:2rem;z-index:999;opacity:0;transform:translateY(100px);transition:opacity .5s,transform .5s;} .sticky-cta.visible{opacity:1;transform:translateY(0);}
-    </style>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a072e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7e22ce;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9333ea;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d021a;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    .galaxy-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      transform: rotate(45deg);
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle 5s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.3; transform: scale(0.8); }
+      50%     { opacity: 1;   transform: scale(1.2); }
+    }
+
+    .section-content {
+      opacity: 0;
+      transform: translateY(60px) scale(0.95);
+      transition: opacity 0.7s cubic-bezier(0.68,-0.55,0.27,1.55),
+                  transform 0.7s cubic-bezier(0.68,-0.55,0.27,1.55);
+      will-change: opacity, transform;
+    }
+    .section-content.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    #impact-perspective-wrapper { perspective: 1000px; perspective-origin: center; }
+    #impact-interactive-area {
+      transform-style: preserve-3d;
+      transition: opacity 0.7s cubic-bezier(0.68,-0.55,0.27,1.55),
+                  transform 0.15s ease-out;
+    }
+
+    h1,h2,h3,.impact-stat-value {
+      font-family: 'Orbitron', sans-serif;
+      color: #c084fc;
+    }
+    h1 { font-weight: 900; }
+    .impact-stat-value { color: #f0abfc; }
+
+    .glassmorphism {
+      background: rgba(26,7,46,0.4);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      border: 1px solid rgba(192,132,252,0.25);
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(126,34,206,0.25);
+    }
+
+    .form-input {
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(192,132,252,0.3);
+      color: #e0e0e0;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-input::placeholder { color: #a78bfa; opacity: 0.7; }
+    .form-input:focus {
+      border-color: #a855f7;
+      box-shadow: 0 0 0 3px rgba(168,85,247,0.3);
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: #d946ef;
+      color: #110321;
+      font-weight: 700;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background-color: #f0abfc;
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    nav {
+      position: fixed; top:0; left:0; width:100%; z-index:1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav.scrolled {
+      background-color: rgba(13,2,26,0.85);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .impact-stat, .service-item {
+      background-color: rgba(126,34,206,0.15);
+      border: 1px solid rgba(192,132,252,0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      cursor: default;
+    }
+    .impact-stat:hover, .service-item:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(126,34,206,0.3);
+    }
+    .impact-stat-value { font-size: 2.5rem; font-weight:700; margin-bottom:0.5rem; display:block; }
+    .impact-stat-label { font-size:1rem; color:#d8b4fe; line-height:1.4; }
+    .service-item h3 { font-size:1.75rem; }
+
+    .body-text {
+      font-size:1.125rem; line-height:1.75rem; font-weight:400; color:#d8b4fe;
+    }
+    .body-text strong { color:#f0abfc; font-weight:600; }
+
+    .case-study-blurb {
+      font-size:0.9rem; font-style:italic; color:#c084fc;
+      margin-top:0.75rem; border-left:2px solid #7e22ce; padding-left:0.75rem;
+    }
+    .proof-blurb {
+      font-size:0.8rem; font-style:italic; opacity:0.7; margin-top:0.5rem;
+    }
+
+    .sticky-cta {
+      position: fixed; bottom:2rem; right:2rem; z-index:999;
+      opacity:0; transform:translateY(100px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .sticky-cta.visible {
+      opacity:1; transform:translateY(0);
+    }
+  </style>
 </head>
 <body class="relative">
 
-    <div class="galaxy-bg"><div class="stars" id="stars-container"></div></div>
+  <div class="galaxy-bg">
+    <div class="stars" id="stars-container"></div>
+  </div>
 
-    <nav class="p-4 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo image instead of text -->
-            <a href="#hero" class="flex items-center space-x-2">
-                <img src="assets/images/logo.png" alt="Prime Loop AI" class="h-10 w-auto">
-                <span class="text-3xl font-bold text-purple-400 hover:text-purple-300">Prime Loop AI</span>
-            </a>
-            <div>
-                <a href="#services" class="text-purple-300 hover:text-purple-100 px-3 py-2 text-sm">Services</a>
-                <a href="#impact"   class="text-purple-300 hover:text-purple-100 px-3 py-2 text-sm">Our Impact</a>
-                <a href="#contact"  class="text-purple-300 hover:text-purple-100 px-3 py-2 text-sm">Contact Us</a>
+  <nav class="p-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#hero" class="text-3xl font-bold text-purple-400 hover:text-purple-300 transition-colors">
+        Prime Loop AI
+      </a>
+      <div>
+        <a href="#services" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+        <a href="#impact"   class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Impact</a>
+        <a href="#contact"  class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+    <div class="section-content glassmorphism p-8 md:p-12 max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-fuchsia-400">Automate. Scale. Dominate.</h1>
+      <p class="text-xl md:text-2xl text-purple-200 mb-8 max-w-3xl mx-auto">
+        Custom AI Systems That Cut Costs, Save Time & Keep You 10 Steps Ahead.
+      </p>
+      <p class="text-lg text-gray-300 mb-10">
+        We build AI solutions that make your business smarter, faster, and more profitable — from strategy to execution.
+      </p>
+      <a href="#contact" class="btn-primary py-4 px-10 rounded-lg text-lg shadow-lg hover:shadow-xl">
+        Get Your Custom AI Plan
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="vision" class="py-20 min-h-screen flex items-center">
+    <div class="container mx-auto px-4">
+      <div class="section-content glassmorphism p-8 md:p-12 max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-8">Why Prime Loop AI</h2>
+        <p class="body-text mb-6">
+          We help founders, operators, and tech-savvy teams scale faster by replacing manual ops with <strong>intelligent automation</strong> — without hiring more staff.
+        </p>
+        <p class="body-text">
+          Our automations have helped clients reclaim <strong>10,000+ hours</strong> and save over <strong>$650,000</strong> in operating costs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 min-h-screen flex items-center">
+    <div class="container mx-auto px-4">
+      <div class="section-content glassmorphism p-8 md:p-12 max-w-5xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">What We Build</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Custom AI Models -->
+          <div class="service-item">
+            <div class="mb-4">
+              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6"/>
+                <!-- truncated for brevity -->
+              </svg>
             </div>
+            <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">Custom AI Models</h3>
+            <p class="body-text">Tailored machine learning solutions designed to meet your unique business challenges and unlock new opportunities.</p>
+            <p class="case-study-blurb">📊 Increased lead conversion 34% in 2 weeks for a real estate agency.</p>
+          </div>
+          <!-- AI-Powered Platforms -->
+          <div class="service-item">
+            <div class="mb-4">
+              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <!-- icon paths -->
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI-Powered Platforms</h3>
+            <p class="body-text">Scalable and robust platforms that integrate AI seamlessly into your workflows, enhancing efficiency and decision-making.</p>
+            <p class="case-study-blurb">🚀 Scaled user support for a SaaS company, handling 5,000+ tickets monthly.</p>
+          </div>
+          <!-- Data Analytics & Insights -->
+          <div class="service-item">
+            <div class="mb-4">
+              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <!-- icon paths -->
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">Data Analytics & Insights</h3>
+            <p class="body-text">Transforming raw data into actionable intelligence with advanced analytics and visualization techniques.</p>
+            <p class="case-study-blurb">💡 Uncovered $1.2M in new revenue opportunities for an e-commerce brand.</p>
+          </div>
+          <!-- AI Strategy Consulting -->
+          <div class="service-item">
+            <div class="mb-4">
+              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <!-- icon paths -->
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI Strategy Consulting</h3>
+            <p class="body-text">Expert guidance to help you navigate the AI landscape and develop a roadmap for successful AI adoption.</p>
+            <p class="case-study-blurb">📈 Helped a UK firm save 25% of payroll by automating invoice processing.</p>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero, sections, services, impact, contact, footer, scripts unchanged -->
-    <!-- ... full original body here ... -->
+  <!-- IMPACT -->
+  <section id="impact" class="py-20 min-h-screen flex items-center">
+    <div class="container mx-auto px-4" id="impact-perspective-wrapper">
+      <div class="section-content glassmorphism p-8 md:p-12 max-w-4xl mx-auto" id="impact-interactive-area">
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">Our Impact & Experience</h2>
+        <p class="body-text text-center mb-12">
+          With proven AI systems deployed across Europe, we’ve helped clients generate <strong>$50M+</strong>, save <strong>10,000+ hours</strong>, and cut payroll costs by <strong>$650,000+</strong> — all in under 2 years.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="impact-stat">
+            <span class="impact-stat-value" id="companies-automated-value">0+</span>
+            <span class="impact-stat-label">Companies Automated</span>
+            <p class="proof-blurb">(Across 5+ industries)</p>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-stat-value" id="generated-for-clients-value">$0M+</span>
+            <span class="impact-stat-label">Generated for Clients</span>
+            <p class="proof-blurb">(Combined new revenue & cost savings)</p>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-stat-value" id="hours-saved-value">0+</span>
+            <span class="impact-stat-label">Hours Saved</span>
+            <p class="proof-blurb">(Reclaimed from manual operations)</p>
+          </div>
+          <div class="impact-stat md:col-span-2 lg:col-span-3">
+            <span class="impact-stat-value" id="payroll-savings-value">$0+</span>
+            <span class="impact-stat-label">In Payroll Savings for Business Owners</span>
+            <p class="proof-blurb">(Based on actual client-reported savings)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 min-h-screen flex items-center">
+    <div class="container mx-auto px-4">
+      <div class="section-content glassmorphism p-8 md:p-12 max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">Get Your Free AI Audit</h2>
+        <p class="body-text text-center mb-8">See exactly how much time and money you can save.</p>
+        <blockquote class="border-l-4 border-fuchsia-500 italic text-purple-200 pl-4 py-2 my-8 text-center mx-auto max-w-lg">
+          <p>“We weren’t just handed a tool – Prime Loop AI rebuilt how we operate. In just 30 days, our team cut 40% of repetitive tasks and finally scaled without extra hires. Total game changer.”</p>
+          <cite class="mt-2 block text-sm not-italic text-purple-300">– Alex R., CEO of ScaleUp Solutions</cite>
+        </blockquote>
+        <form id="contactForm" action="https://formspree.io/f/mzzggrjo" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-purple-300">Full Name</label>
+            <input type="text" name="name" id="name" required class="form-input mt-1 block w-full rounded-md p-3 text-base">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-purple-300">Email Address</label>
+            <input type="email" name="email" id="email" required class="form-input mt-1 block w-full rounded-md p-3 text-base">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-purple-300">Your Biggest Challenge</label>
+            <textarea name="message" id="message" rows="4" required class="form-input mt-1 block w-full rounded-md p-3 text-base" placeholder="e.g., 'Repetitive data entry is slowing us down...'"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="w-full btn-primary py-3 px-6 rounded-lg text-lg shadow-md hover:shadow-lg">
+              Claim My AI Strategy Session
+            </button>
+          </div>
+        </form>
+        <div id="formResponseMessage" class="text-center mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-purple-300">© <span id="currentYear"></span> Prime Loop AI. All rights reserved.</p>
+      <p class="text-sm text-purple-400">AI that delivers. Teams that don’t miss.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#contact" class="btn-primary py-3 px-5 rounded-full text-base shadow-lg hover:shadow-xl flex items-center space-x-2">
+      <span>Get Free AI Audit</span>
+      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    // JS omitted for brevity—use your original script here
+  </script>
 </body>
 </html>
