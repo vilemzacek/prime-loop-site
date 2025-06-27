@@ -19,19 +19,13 @@
 
   <style>
     /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1a072e;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1a072e; }
     ::-webkit-scrollbar-thumb {
       background: #7e22ce;
       border-radius: 4px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #9333ea;
-    }
+    ::-webkit-scrollbar-thumb:hover { background: #9333ea; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -41,28 +35,23 @@
     }
 
     .galaxy-bg {
-      position: fixed;
-      top: 0; left: 0;
+      position: fixed; top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: -1;
       background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       overflow: hidden;
     }
-
     .stars {
-      position: absolute;
-      top: 0; left: 0;
+      position: absolute; top: 0; left: 0;
       width: 100%; height: 100%;
       transform: rotate(45deg);
     }
-
     .star {
       position: absolute;
       background-color: #fff;
       border-radius: 50%;
       animation: twinkle 5s infinite ease-in-out;
     }
-
     @keyframes twinkle {
       0%,100% { opacity: 0.3; transform: scale(0.8); }
       50%     { opacity: 1;   transform: scale(1.2); }
@@ -144,14 +133,13 @@
       padding: 1.5rem;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      cursor: default;
+      user-select: none; cursor: default;
     }
     .impact-stat:hover, .service-item:hover {
       transform: translateY(-5px) scale(1.03);
       box-shadow: 0 8px 25px rgba(126,34,206,0.3);
     }
-    .impact-stat-value { font-size: 2.5rem; font-weight:700; margin-bottom:0.5rem; display:block; }
+    .impact-stat-value { font-size:2.5rem; font-weight:700; margin-bottom:0.5rem; display:block; }
     .impact-stat-label { font-size:1rem; color:#d8b4fe; line-height:1.4; }
     .service-item h3 { font-size:1.75rem; }
 
@@ -237,11 +225,7 @@
           <!-- Custom AI Models -->
           <div class="service-item">
             <div class="mb-4">
-              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6"/>
-                <!-- truncated for brevity -->
-              </svg>
+              <!-- SVG icon here -->
             </div>
             <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">Custom AI Models</h3>
             <p class="body-text">Tailored machine learning solutions designed to meet your unique business challenges and unlock new opportunities.</p>
@@ -250,9 +234,7 @@
           <!-- AI-Powered Platforms -->
           <div class="service-item">
             <div class="mb-4">
-              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <!-- icon paths -->
-              </svg>
+              <!-- SVG icon here -->
             </div>
             <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI-Powered Platforms</h3>
             <p class="body-text">Scalable and robust platforms that integrate AI seamlessly into your workflows, enhancing efficiency and decision-making.</p>
@@ -261,9 +243,7 @@
           <!-- Data Analytics & Insights -->
           <div class="service-item">
             <div class="mb-4">
-              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <!-- icon paths -->
-              </svg>
+              <!-- SVG icon here -->
             </div>
             <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">Data Analytics & Insights</h3>
             <p class="body-text">Transforming raw data into actionable intelligence with advanced analytics and visualization techniques.</p>
@@ -272,9 +252,7 @@
           <!-- AI Strategy Consulting -->
           <div class="service-item">
             <div class="mb-4">
-              <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <!-- icon paths -->
-              </svg>
+              <!-- SVG icon here -->
             </div>
             <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI Strategy Consulting</h3>
             <p class="body-text">Expert guidance to help you navigate the AI landscape and develop a roadmap for successful AI adoption.</p>
@@ -372,7 +350,7 @@
   </div>
 
   <script>
-    // JS omitted for brevity—use your original script here
+    // Include your original JavaScript here (stars, animations, form handling, etc.)
   </script>
 </body>
 </html>
