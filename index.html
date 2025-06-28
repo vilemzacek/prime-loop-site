@@ -22,6 +22,10 @@
             background: #9333ea;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0d021a;
@@ -120,15 +124,14 @@
             outline: none;
         }
 
-        /* UPDATED: Brighter, more contrasting CTA buttons */
         .btn-primary {
-            background-color: #d946ef; /* Bright fuchsia */
-            color: #110321; /* Dark text for contrast */
+            background-color: #d946ef;
+            color: #110321;
             font-weight: 700;
             transition: background-color 0.3s, transform 0.2s;
         }
         .btn-primary:hover {
-            background-color: #f0abfc; /* Lighter fuchsia */
+            background-color: #f0abfc;
             transform: translateY(-2px) scale(1.02);
         }
 
@@ -176,9 +179,8 @@
             font-size: 1.75rem;
         }
 
-        /* UPDATED: Slightly larger body text */
         .body-text {
-            font-size: 1.125rem; /* text-lg in Tailwind */
+            font-size: 1.125rem;
             line-height: 1.75rem;
             font-weight: 400;
             color: #d8b4fe;
@@ -202,7 +204,6 @@
             margin-top: 0.5rem;
         }
 
-        /* NEW: Sticky CTA Button */
         .sticky-cta {
             position: fixed;
             bottom: 2rem;
@@ -225,40 +226,61 @@
         <div class="stars" id="stars-container"></div>
     </div>
 
-    <nav class="p-4 transition-all duration-300 ease-in-out">
-  <div class="container mx-auto flex justify-between items-center">
-    <!-- Logo and site name removed -->
-    <div></div>
-    <div>
-      <a href="#services" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-        Services
-      </a>
-      <a href="#impact" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-        Our Impact
-      </a>
-      <a href="#contact" class="text-purple-300 hover:text-purple-100 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-        Contact Us
-      </a>
+    <!-- RESPONSIVE NAVIGATION BAR -->
+    <nav class="p-4 md:p-6 transition-all duration-300 ease-in-out">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- "Prime Loop" logo moved to the left -->
+        <a href="#hero" id="prime-loop-logo" class="text-purple-400 hover:text-purple-300 transition-colors duration-300 font-bold text-2xl" style="font-family: 'Orbitron', sans-serif;">
+            Prime Loop
+        </a>
+        
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#services" class="text-purple-300 hover:text-purple-100 rounded-md text-lg font-bold transition-colors">
+            Services
+          </a>
+          <a href="#impact" class="text-purple-300 hover:text-purple-100 rounded-md text-lg font-bold transition-colors">
+            Our Impact
+          </a>
+          <a href="#contact" class="text-purple-300 hover:text-purple-100 rounded-md text-lg font-bold transition-colors">
+            Contact Us
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-purple-300 hover:text-purple-100 focus:outline-none">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-[1001]">
+        <div class="flex flex-col items-center justify-center h-full">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-purple-300 hover:text-white text-4xl">&times;</button>
+            <a href="#services" class="mobile-nav-link block text-purple-300 hover:text-white text-3xl font-bold py-4">Services</a>
+            <a href="#impact" class="mobile-nav-link block text-purple-300 hover:text-white text-3xl font-bold py-4">Our Impact</a>
+            <a href="#contact" class="mobile-nav-link block text-purple-300 hover:text-white text-3xl font-bold py-4">Contact Us</a>
+        </div>
     </div>
-  </div>
-</nav>
 
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
         <div class="section-content glassmorphism p-8 md:p-12 max-w-4xl mx-auto">
-            <!-- UPDATED: Headline -->
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-fuchsia-400">
                 Automate. Scale. Dominate.
             </h1>
-            <!-- UPDATED: Subheadline -->
             <p class="text-xl md:text-2xl text-purple-200 mb-8 max-w-3xl mx-auto">
                 Custom AI Systems That Cut Costs, Save Time & Keep You 10 Steps Ahead.
             </p>
             <p class="text-lg text-gray-300 mb-10">
                 We build AI solutions that make your business smarter, faster, and more profitable — from strategy to execution.
             </p>
-            <!-- UPDATED: CTA Button -->
             <a href="#contact"
                class="btn-primary py-4 px-10 rounded-lg text-lg shadow-lg hover:shadow-xl">
                 Get Your Custom AI Plan
@@ -271,12 +293,9 @@
         <div class="container mx-auto px-4">
             <div class="section-content glassmorphism p-8 md:p-12 max-w-4xl mx-auto text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8">Why Prime Loop AI</h2>
-                <!-- UPDATED: Body text with outcome-based clarity -->
-                <p class="body-text mb-6">
-                    We help founders, operators, and tech-savvy teams scale faster by replacing manual ops with <strong>intelligent automation</strong> — without hiring more staff.
-                </p>
+                <!-- UPDATED TEXT -->
                 <p class="body-text">
-                    Our automations have helped clients reclaim <strong>10,000+ hours</strong> and save over <strong>$650,000</strong> in operating costs.
+                    We handle the tedious tasks so you don’t have to. Our custom automations replace manual workflows without adding headcount, already freeing over 10,000 hours and cutting more than $650,000 in operating costs for our clients.
                 </p>
             </div>
         </div>
@@ -288,7 +307,7 @@
             <div class="section-content glassmorphism p-8 md:p-12 max-w-5xl mx-auto">
                 <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">What We Build</h2>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- UPDATED: Service Item with Icon and Case Study -->
+                    <!-- Service Item 1: Custom AI Models -->
                     <div class="service-item">
                         <div class="mb-4">
                            <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.553L16.5 21.75l-.398-1.197a3.375 3.375 0 00-2.456-2.456L12.5 18l1.197-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.197a3.375 3.375 0 002.456 2.456L20.5 18l-1.197.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
@@ -297,7 +316,7 @@
                         <p class="body-text">Tailored machine learning solutions designed to meet your unique business challenges and unlock new opportunities.</p>
                         <p class="case-study-blurb">📊 Increased lead conversion 34% in 2 weeks for a real estate agency.</p>
                     </div>
-                    <!-- UPDATED: Service Item with Icon and Case Study -->
+                    <!-- Service Item 2: AI-Powered Platforms -->
                     <div class="service-item">
                          <div class="mb-4">
                             <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
@@ -306,19 +325,27 @@
                         <p class="body-text">Scalable and robust platforms that integrate AI seamlessly into your workflows, enhancing efficiency and decision-making.</p>
                          <p class="case-study-blurb">🚀 Scaled user support for a SaaS company, handling 5,000+ tickets monthly.</p>
                     </div>
-                    <!-- UPDATED: Service Item with Icon and Case Study -->
+                    <!-- Service Item 3: Data Analytics & Insights with NEW icon -->
                     <div class="service-item">
                          <div class="mb-4">
-                           <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12v-1.5M3.75 3h16.5v11.25c0 .621-.504 1.125-1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h3.375c.621 0 1.125.504 1.125 1.125v4.875h-1.5V16.5M3.75 12h16.5" /></svg>
+                           <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                           </svg>
                         </div>
                         <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">Data Analytics & Insights</h3>
                         <p class="body-text">Transforming raw data into actionable intelligence with advanced analytics and visualization techniques.</p>
                         <p class="case-study-blurb">💡 Uncovered $1.2M in new revenue opportunities for an e-commerce brand.</p>
                     </div>
-                    <!-- UPDATED: Service Item with Icon and Case Study -->
+                    <!-- Service Item 4: AI Strategy Consulting with NEW icon -->
                     <div class="service-item">
                          <div class="mb-4">
-                            <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.197-5.197" /></svg>
+                            <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 10.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.875 10.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" />
+                            </svg>
                         </div>
                         <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI Strategy Consulting</h3>
                         <p class="body-text">Expert guidance to help you navigate the AI landscape and develop a roadmap for successful AI adoption.</p>
@@ -334,12 +361,10 @@
         <div class="container mx-auto px-4" id="impact-perspective-wrapper"> 
             <div class="section-content glassmorphism p-8 md:p-12 max-w-4xl mx-auto" id="impact-interactive-area">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center">Our Impact & Experience</h2>
-                <!-- UPDATED: Impact opener -->
                 <p class="body-text text-center mb-12">
                    With proven AI systems deployed across Europe, we’ve helped clients generate <strong>$50M+</strong>, save <strong>10,000+ hours</strong>, and cut payroll costs by <strong>$650,000+</strong> — all in under 2 years.
                 </p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <!-- UPDATED: Impact stat with proof blurb -->
                     <div class="impact-stat">
                         <span class="impact-stat-value" id="companies-automated-value">0+</span>
                         <span class="impact-stat-label">Companies Automated</span>
@@ -369,17 +394,14 @@
     <section id="contact" class="py-20 min-h-screen flex items-center">
         <div class="container mx-auto px-4">
             <div class="section-content glassmorphism p-8 md:p-12 max-w-2xl mx-auto">
-                <!-- UPDATED: Contact Hook -->
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">Get Your Free AI Audit</h2>
                 <p class="body-text text-center mb-8">
                     See exactly how much time and money you can save.
                 </p>
-                <!-- UPDATED: Testimonial Quote -->
                 <blockquote class="border-l-4 border-fuchsia-500 italic text-purple-200 pl-4 py-2 my-8 text-center mx-auto max-w-lg">
                     <p>“We weren’t just handed a tool - Prime Loop AI rebuilt how we operate. In just 30 days, our team cut 40% of repetitive tasks and finally scaled without extra hires. Total game changer.”</p>
                     <cite class="mt-2 block text-sm not-italic text-purple-300">- Alex R., CEO of ScaleUp Solutions</cite>
                 </blockquote>
-                <!-- UPDATED: Form tag with Formspree endpoint -->
                 <form id="contactForm" action="https://formspree.io/f/mzzggrjo" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-purple-300">Full Name</label>
@@ -398,7 +420,6 @@
                                   placeholder="e.g., 'Repetitive data entry is slowing us down...'"></textarea>
                     </div>
                     <div>
-                        <!-- UPDATED: Button text -->
                         <button type="submit"
                                 class="w-full btn-primary py-3 px-6 rounded-lg text-lg shadow-md hover:shadow-lg">
                             Claim My AI Strategy Session
@@ -418,7 +439,7 @@
         </div>
     </footer>
 
-    <!-- NEW: Sticky CTA Button -->
+    <!-- Sticky CTA Button -->
     <div class="sticky-cta" id="sticky-cta">
         <a href="#contact" class="btn-primary py-3 px-5 rounded-full text-base shadow-lg hover:shadow-xl flex items-center space-x-2">
             <span>Get Free AI Audit</span>
@@ -427,13 +448,32 @@
     </div>
 
     <script>
-        // JavaScript for scroll animations and other interactions
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        // Generate stars for galaxy background
+        if (mobileMenuButton && mobileMenu && closeMobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeMobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // --- Starry Background ---
         const starsContainer = document.getElementById('stars-container');
-        const numberOfStars = 150; 
-
         if (starsContainer) {
+            const numberOfStars = 150; 
             for (let i = 0; i < numberOfStars; i++) {
                 let star = document.createElement('div');
                 star.className = 'star';
@@ -447,9 +487,9 @@
             }
         }
 
-        // Function to animate numbers
+        // --- Animate Numbers on Scroll ---
         function animateValue(element, start, end, duration, prefix = '', suffix = '') {
-            if (!element) { return; }
+            if (!element) return;
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
@@ -465,14 +505,9 @@
             window.requestAnimationFrame(step);
         }
 
-        // Intersection Observer for section animations
+        // --- Section Fade-in Animation ---
         const sectionsToObserve = document.querySelectorAll('.section-content');
-        const observerOptions = {
-            root: null, 
-            rootMargin: '0px', 
-            threshold: 0.15 
-        };
-
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
         let impactNumbersAnimated = false;
 
         const animationObserver = new IntersectionObserver((entries, observerInstance) => {
@@ -495,21 +530,20 @@
             if (section) animationObserver.observe(section);
         });
 
-        // Mouse follow 3D effect for #impact-interactive-area
+        // --- 3D Mouse-follow Effect ---
         const impactArea = document.getElementById('impact-interactive-area');
         if (impactArea) {
             const maxRotation = 7; 
             const maxTranslation = 8; 
 
             impactArea.addEventListener('mousemove', function(e) {
-                if (!impactArea.classList.contains('visible')) {
-                    return;
-                }
+                if (!impactArea.classList.contains('visible')) return;
                 const rect = impactArea.getBoundingClientRect();
-                const x = e.clientX - rect.left; 
-                const y = e.clientY - rect.top;  
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
+                const { width, height, left, top } = rect;
+                const x = e.clientX - left; 
+                const y = e.clientY - top;  
+                const centerX = width / 2;
+                const centerY = height / 2;
                 const rotateY = ((x - centerX) / centerX) * maxRotation;
                 const rotateX = -((y - centerY) / centerY) * maxRotation; 
                 const translateX = ((x - centerX) / centerX) * maxTranslation * 0.25; 
@@ -523,44 +557,37 @@
         }
 
 
-        // Smooth scrolling for internal links
+        // --- Smooth Scrolling for All Links ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
 
-        // Set current year in footer
+        // --- Footer Year ---
         const currentYearEl = document.getElementById('currentYear');
         if (currentYearEl) {
             currentYearEl.textContent = new Date().getFullYear();
         }
 
-        // NEW: Show sticky CTA on scroll
+        // --- Sticky CTA Button Visibility ---
         const heroSection = document.getElementById('hero');
         const stickyCTA = document.getElementById('sticky-cta');
         if (heroSection && stickyCTA) {
             const stickyObserver = new IntersectionObserver(entries => {
-                if (!entries[0].isIntersecting) {
-                    stickyCTA.classList.add('visible');
-                } else {
-                    stickyCTA.classList.remove('visible');
-                }
+                stickyCTA.classList.toggle('visible', !entries[0].isIntersecting);
             }, { threshold: 0.1 }); 
             stickyObserver.observe(heroSection);
         }
 
-        // UPDATED: JavaScript for Formspree submission
+        // --- Formspree Submission ---
         const contactForm = document.getElementById('contactForm'); 
         const formResponseMessage = document.getElementById('formResponseMessage');
-
         if (contactForm && formResponseMessage) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -571,37 +598,30 @@
                 fetch(action, {
                     method: 'POST',
                     body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
-                        formResponseMessage.textContent = "Thanks for submitting your inquiry, our team will get back to you within 24h.";
+                        formResponseMessage.textContent = "Thanks! Your inquiry has been sent. We'll get back to you within 24 hours.";
                         formResponseMessage.className = 'text-fuchsia-400 font-semibold text-center mt-4'; 
                         form.reset();
                     } else {
                         response.json().then(data => {
-                            if (Object.hasOwn(data, 'errors')) {
-                                formResponseMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
-                            } else {
-                                formResponseMessage.textContent = "Oops! There was a problem submitting your form";
-                            }
+                            const errorMessage = data.errors ? data.errors.map(err => err.message).join(', ') : "Oops! There was a problem.";
+                            formResponseMessage.textContent = errorMessage;
                             formResponseMessage.className = 'text-red-500 font-semibold text-center mt-4';
-                        })
+                        });
                     }
                 }).catch(error => {
-                    formResponseMessage.textContent = "Oops! There was a problem submitting your form";
+                    formResponseMessage.textContent = "Oops! There was a network error. Please try again.";
                     formResponseMessage.className = 'text-red-500 font-semibold text-center mt-4';
                 });
 
-                // Clear the message after a delay
                 setTimeout(() => {
                     formResponseMessage.textContent = ''; 
                     formResponseMessage.className = 'text-center mt-4'; 
                 }, 7000);
             });
         }
-
     </script>
 </body>
 </html>
