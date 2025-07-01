@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- UPDATED SEO TITLE -->
+    <!-- SEO TITLE -->
     <title>Prime Loop AI - Expansion without exhaustion</title>
     
-    <!-- UPDATED META DESCRIPTION -->
+    <!-- META DESCRIPTION -->
     <meta name="description" content="We build AI systems that cut costs, save time, and keep you ahead of your competition. Get your custom automation today.">
     
     <!-- FAVICON AND APP ICON LINKS -->
@@ -21,7 +22,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom scrollbar */
+        /* Custom scrollbar for a futuristic feel */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -47,6 +48,7 @@
             overflow-x: hidden; 
         }
 
+        /* Fixed galaxy background */
         .galaxy-bg {
             position: fixed;
             top: 0;
@@ -79,7 +81,7 @@
             50% { opacity: 1; transform: scale(1.2); }
         }
 
-        /* Default animation state for ALL sections */
+        /* Fade-in animation for sections */
         .section-content {
             opacity: 0;
             transform: translateY(60px) scale(0.95);
@@ -104,6 +106,7 @@
                         transform 0.15s ease-out; 
         }
 
+        /* Custom fonts for headings */
         h1, h2, h3, .impact-stat-value {
             font-family: 'Orbitron', sans-serif;
             color: #c084fc;
@@ -113,6 +116,7 @@
              color: #f0abfc;
         }
 
+        /* Glassmorphism effect for cards */
         .glassmorphism {
             background: rgba(26, 7, 46, 0.4);
             backdrop-filter: blur(12px) saturate(180%);
@@ -122,6 +126,7 @@
             box-shadow: 0 10px 35px 0 rgba(126, 34, 206, 0.25);
         }
 
+        /* Styled form inputs */
         .form-input {
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(192, 132, 252, 0.3);
@@ -138,17 +143,26 @@
             outline: none;
         }
 
+        /* Primary button style - UPDATED */
         .btn-primary {
-            background-color: #d946ef;
-            color: #110321;
+            background-image: linear-gradient(to right, #d946ef, #a855f7);
+            color: #ffffff;
             font-weight: 700;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none;
         }
         .btn-primary:hover {
-            background-color: #f0abfc;
-            transform: translateY(-2px) scale(1.02);
+            background-image: linear-gradient(to right, #a855f7, #d946ef);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+         .btn-primary:active {
+            transform: translateY(-1px);
         }
 
+
+        /* Navigation bar styling */
         nav {
             position: fixed;
             top: 0;
@@ -163,6 +177,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
+        /* Impact stats and service items styling */
         .impact-stat, .service-item {
             background-color: rgba(126, 34, 206, 0.15);
             border: 1px solid rgba(192, 132, 252, 0.2);
@@ -193,6 +208,7 @@
             font-size: 1.75rem;
         }
 
+        /* General text styling */
         .body-text {
             font-size: 1.125rem;
             line-height: 1.75rem;
@@ -218,19 +234,111 @@
             margin-top: 0.5rem;
         }
 
-        .sticky-cta {
+        /* --- START: CHATBOT STYLES --- */
+        #chat-widget-button {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            z-index: 1100;
+            background-color: #d946ef;
+            color: #110321;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(217, 70, 239, 0.4);
+            transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
         }
-        .sticky-cta.visible {
+        #chat-widget-button:hover {
+            transform: scale(1.1);
+            background-color: #f0abfc;
+        }
+
+        #chat-container {
+            position: fixed;
+            bottom: 7rem;
+            right: 2rem;
+            width: 90vw;
+            max-width: 400px;
+            height: 70vh;
+            max-height: 600px;
+            z-index: 1099;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+        #chat-container.visible {
             opacity: 1;
             transform: translateY(0);
+            pointer-events: auto;
         }
+        #chat-box {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #chat-box .message {
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 75%;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+            word-wrap: break-word;
+        }
+        #chat-box .message strong {
+            font-weight: 700;
+            color: #f0abfc;
+        }
+        #chat-box .user-message {
+            background-color: #7e22ce;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        #chat-box .bot-message {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        #chat-box .typing-indicator {
+            font-style: italic;
+            opacity: 0.8;
+        }
+        #input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid rgba(192, 132, 252, 0.25);
+            align-items: center;
+        }
+        #chat-input {
+            flex-grow: 1;
+            border-radius: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        #input-area .btn-primary {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* --- END: CHATBOT STYLES --- */
 
     </style>
 </head>
@@ -296,7 +404,7 @@
                 We build AI solutions that make your business smarter, faster, and more profitable — from strategy to execution.
             </p>
             <a href="#contact"
-               class="btn-primary py-4 px-10 rounded-lg text-lg shadow-lg hover:shadow-xl">
+               class="btn-primary py-4 px-10 rounded-lg text-lg shadow-md hover:shadow-lg">
                 Get Your Custom AI Plan
             </a>
         </div>
@@ -334,33 +442,33 @@
                     <div class="service-item">
                          <div class="mb-4">
                             <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
-                        </div>
+                         </div>
                         <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI-Powered Platforms</h3>
                         <p class="body-text">Scalable and robust platforms that integrate AI seamlessly into your workflows, enhancing efficiency and decision-making.</p>
                          <p class="case-study-blurb">🚀 Scaled user support for a SaaS company, handling 5,000+ tickets monthly.</p>
                     </div>
-                    <!-- Service Item 3: Data Analytics & Insights with NEW icon -->
+                    <!-- Service Item 3: Data Analytics & Insights -->
                     <div class="service-item">
                          <div class="mb-4">
                            <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
                            </svg>
-                        </div>
+                         </div>
                         <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">Data Analytics & Insights</h3>
                         <p class="body-text">Transforming raw data into actionable intelligence with advanced analytics and visualization techniques.</p>
                         <p class="case-study-blurb">💡 Uncovered $1.2M in new revenue opportunities for an e-commerce brand.</p>
                     </div>
-                    <!-- Service Item 4: AI Strategy Consulting with NEW icon -->
+                    <!-- Service Item 4: AI Strategy Consulting -->
                     <div class="service-item">
                          <div class="mb-4">
                             <svg class="h-12 w-12 mx-auto text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 10.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.875 10.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 10.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7.875 10.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" />
                             </svg>
-                        </div>
+                         </div>
                         <h3 class="text-2xl font-semibold mb-3 text-fuchsia-400">AI Strategy Consulting</h3>
                         <p class="body-text">Expert guidance to help you navigate the AI landscape and develop a roadmap for successful AI adoption.</p>
                         <p class="case-study-blurb">📈 Helped a UK firm save 25% of payroll by automating invoice processing.</p>
@@ -453,13 +561,25 @@
         </div>
     </footer>
 
-    <!-- Sticky CTA Button -->
-    <div class="sticky-cta" id="sticky-cta">
-        <a href="#contact" class="btn-primary py-3 px-5 rounded-full text-base shadow-lg hover:shadow-xl flex items-center space-x-2">
-            <span>Get Free AI Audit</span>
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
-        </a>
+    <!-- CHATBOT WIDGET -->
+    <div id="chat-widget-button">
+        <!-- Chatbot Icon SVG -->
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </div>
+
+    <div id="chat-container" class="glassmorphism">
+        <div id="chat-box">
+            <!-- UPDATED WELCOME MESSAGE -->
+            <div class="message bot-message">Hello! I'm Loop. Do you have any questions regarding our service before you connect with our human team?</div>
+        </div>
+        <div id="input-area">
+            <input type="text" id="chat-input" class="form-input" placeholder="Ask about our AI solutions...">
+            <button id="send-button" class="btn-primary">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.949a.75.75 0 00.95.826L11.25 9.25v1.5L4.643 11.99a.75.75 0 00-.95.826l-1.414 4.949a.75.75 0 00.95.826L16.25 12l-13.145-9.711z" /></svg>
+            </button>
+        </div>
+    </div>
+
 
     <script>
         // --- Mobile Menu Toggle ---
@@ -589,16 +709,6 @@
             currentYearEl.textContent = new Date().getFullYear();
         }
 
-        // --- Sticky CTA Button Visibility ---
-        const heroSection = document.getElementById('hero');
-        const stickyCTA = document.getElementById('sticky-cta');
-        if (heroSection && stickyCTA) {
-            const stickyObserver = new IntersectionObserver(entries => {
-                stickyCTA.classList.toggle('visible', !entries[0].isIntersecting);
-            }, { threshold: 0.1 }); 
-            stickyObserver.observe(heroSection);
-        }
-
         // --- Formspree Submission ---
         const contactForm = document.getElementById('contactForm'); 
         const formResponseMessage = document.getElementById('formResponseMessage');
@@ -636,6 +746,145 @@
                 }, 7000);
             });
         }
+
+        // --- START: CHATBOT LOGIC ---
+        const chatWidgetButton = document.getElementById('chat-widget-button');
+        const chatContainer = document.getElementById('chat-container');
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        const chatSendButton = document.getElementById('send-button');
+
+        // This is the webhook URL from your Make.com scenario
+        const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/xdmt3eewueg9ojy56qi9wbn95xjtusxx';
+        
+        // This variable will hold the conversation thread ID from the AI
+        let threadId = null;
+
+        // Toggle chat window visibility when the widget button is clicked
+        chatWidgetButton.addEventListener('click', () => {
+            chatContainer.classList.toggle('visible');
+        });
+
+        // --- Event Listeners for sending messages ---
+        chatSendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // --- Main function to send a message to the webhook ---
+        async function sendMessage() {
+            const messageText = chatInput.value.trim();
+            if (messageText === '') return;
+
+            displayMessage(messageText, 'user');
+            chatInput.value = '';
+            showTypingIndicator(true);
+
+            try {
+                // Send the user's message to the Make.com webhook
+                const response = await fetch(MAKE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: messageText,
+                        threadId: threadId // Will be null for the first message
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Webhook call failed with status: ${response.status}`);
+                }
+
+                // Directly parse the response body as JSON. This is more robust.
+                const data = await response.json();
+                
+                // The AI agent will return a threadId to maintain conversation context.
+                if(data.threadId) {
+                    threadId = data.threadId;
+                }
+
+                showTypingIndicator(false);
+                // The actual reply from the AI is in the 'reply' field of the JSON response.
+                if(data.reply) {
+                    displayMessage(data.reply, 'bot');
+                } else {
+                     displayMessage("Sorry, I didn't get a valid response.", 'bot');
+                }
+
+            } catch (error) {
+                console.error('Error sending message:', error);
+                showTypingIndicator(false);
+                // Check if the error is a JSON parsing error, and provide a more specific message.
+                if (error instanceof SyntaxError) {
+                     displayMessage("The response from the AI was not in the correct format. Please check the Make.com scenario.", 'bot');
+                } else {
+                     displayMessage(error.message || 'Sorry, a critical error occurred. Please try again.', 'bot');
+                }
+            }
+        }
+
+        /**
+         * This function displays a message in the chat box and handles formatting.
+         * @param {string} text - The message text to display.
+         * @param {string} sender - 'user' or 'bot'.
+         */
+        function displayMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', `${sender}-message`);
+
+            // For bot messages, we need to convert markdown-like text to HTML
+            if (sender === 'bot') {
+                // 1. Sanitize the text to prevent potential security issues (XSS) by replacing HTML special characters.
+                let formattedText = text
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+
+                // 2. Convert markdown bold (**text**) to HTML <strong> tags.
+                formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                
+                // 3. Convert markdown bullet points (* or -) that follow an escaped newline.
+                // The key is to look for the literal "\\n" string from the JSON response.
+                formattedText = formattedText.replace(/\\n\s*(\*|\-)\s/g, '<br>• ');
+
+                // 4. Convert any remaining escaped newlines ("\\n") to HTML line breaks (<br>).
+                // We need two backslashes in the regex to match one literal backslash in the string.
+                formattedText = formattedText.replace(/\\n/g, '<br>');
+
+                // Use innerHTML to render the formatted text as HTML.
+                messageElement.innerHTML = formattedText;
+            } else {
+                // For user messages, just display plain text to be safe.
+                messageElement.textContent = text;
+            }
+            
+            chatBox.appendChild(messageElement);
+            // Automatically scroll to the bottom of the chat box.
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        /**
+         * Shows or hides the "Loop is typing..." indicator.
+         * @param {boolean} show - True to show the indicator, false to hide it.
+         */
+        function showTypingIndicator(show) {
+            let indicator = document.querySelector('.typing-indicator');
+            if (show && !indicator) {
+                indicator = document.createElement('div');
+                indicator.classList.add('message', 'bot-message', 'typing-indicator');
+                indicator.textContent = 'Loop is typing...';
+                chatBox.appendChild(indicator);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } else if (!show && indicator) {
+                indicator.remove();
+            }
+        }
+        // --- END: CHATBOT LOGIC ---
+
     </script>
 </body>
 </html>
