@@ -417,11 +417,7 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // --- PREVIEW ONLY ---
-                    triggerSystemAnimation(); 
-                    
-                    /*
-                    // --- ACTUAL FORM SUBMISSION LOGIC (to be enabled later) ---
+                    // --- ACTUAL FORM SUBMISSION LOGIC ---
                     const form = e.target;
                     const data = new FormData(form);
                     const formResponseMessage = document.getElementById('formResponseMessage');
@@ -442,7 +438,6 @@
                         formResponseMessage.style.color = 'var(--color-secondary)';
                     });
                     setTimeout(() => { formResponseMessage.textContent = ''; }, 7000);
-                    */
                 });
             }
             
