@@ -492,13 +492,45 @@
                     formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
                     formattedText = formattedText.replace(/\\n\s*(\*|\-)\s/g, '<br>• ');
                     formattedText = formattedText.replace(/\\n/g, '<br>');
-                    messageElement.innerHTML = formattedText;
+                    
+                    chatBox.appendChild(messageElement);
+                    typewriterEffect(messageElement, formattedText, 20);
                 } else {
                     messageElement.textContent = text;
+                    chatBox.appendChild(messageElement);
+                    chatBox.scrollTop = chatBox.scrollHeight;
                 }
-                
-                chatBox.appendChild(messageElement);
-                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
+            function typewriterEffect(element, text, speed) {
+                let i = 0;
+                element.innerHTML = "";
+                const timer = setInterval(() => {
+                    // Check if user is near the bottom BEFORE adding new content
+                    const isUserAtBottom = chatBox.scrollHeight - chatBox.scrollTop <= chatBox.clientHeight + 20;
+
+                    if (i < text.length) {
+                        if (text.charAt(i) === '<') {
+                            const endIndex = text.indexOf('>', i);
+                            if (endIndex !== -1) {
+                                element.innerHTML += text.substring(i, endIndex + 1);
+                                i = endIndex;
+                            } else {
+                                element.innerHTML += text.charAt(i);
+                            }
+                        } else {
+                             element.innerHTML += text.charAt(i);
+                        }
+                        i++;
+                        
+                        // Only scroll if they were at the bottom before this character was added
+                        if (isUserAtBottom) {
+                            chatBox.scrollTop = chatBox.scrollHeight;
+                        }
+                    } else {
+                        clearInterval(timer);
+                    }
+                }, speed);
             }
 
             function showTypingIndicator(show) {
